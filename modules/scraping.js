@@ -1,5 +1,6 @@
 const cheerio = require('cheerio');
 const request = require('request');
+const { clean, deleteLines } = require('../helpers/stringHelper');
 
 const constants = require('../constants/constants');
 
@@ -10,8 +11,10 @@ const scraping = () => {
   }, (error, response, body) => {
     if (error) return console.error(error);
     const $ = cheerio.load(body);
-    const title = $('a').text();
-    console.log(title);
+    const titles = clean($('a').text());
+    const titlesClean = deleteLines(titles);
+
+    console.log(titlesClean);
   });
 }
 scraping();
