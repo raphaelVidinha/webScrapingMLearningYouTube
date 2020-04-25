@@ -7,6 +7,7 @@ module.exports = {
       if(line.trim().length === 0 || line.trim().startswith('=')) {
         return false;
       }
+      return true;
     });
     return dellLines;
   }
