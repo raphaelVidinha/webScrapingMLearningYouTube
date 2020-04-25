@@ -9,6 +9,9 @@ const scraping = () => {
     url: constants.URL
   }, (error, response, body) => {
     if (error) return console.error(error);
-    const $ = cheerio(body);
+    const $ = cheerio.load(body);
+    const title = $('a').text();
+    console.log(title);
   });
 }
+scraping();
