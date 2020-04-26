@@ -20,12 +20,12 @@ by.train("QUNTO CUSTA VIAJAR PARA OS ESTADOS UNIDOS", 'Custo de Vida');
 by.train("COMPRAR OU ALUGAR IMóVEL NO CANADÁ, O QUE VALE MAIS A PENA? - FINANCIAMENTO DE IMÓVEIS NO CANADÁ", 'custo de vida');
 
 const analyzePhrase = (phrase) => {
-  const score = by.gyess(phrase);
+  const score = by.guess(phrase);
   const result = by.extractWinner(score);
   const numScore = result.score;
   const label = result.label;
 
-  return `${phrase} - SCORE: ${numScore.toFixed(2)} RÓTULO: ${label}`;
+  return {phrase: phrase, score: numScore.toFixed(2), label:label};
 }
 
 module.exports = analyzePhrase;

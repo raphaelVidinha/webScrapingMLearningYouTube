@@ -1,12 +1,16 @@
+const fs = require('fs');
 const cheerio = require('cheerio');
 const request = require('request');
+const analyzePhrase = require('./training');
 const { clean, deleteLines } = require('../helpers/stringHelper');
 const { removeUnwantedPhrases } = require('../helpers/titlesHelper');
+const { writeFile } = require('../helpers/saveFile');
+const { verifyPath } = require('../helpers/path');
 
 const constants = require('../constants/constants');
 
 const scraping = () => {
-  request({
+  return request({
     method: constants.METHOD,
     url: constants.URL
   }, (error, response, body) => {
@@ -16,7 +20,17 @@ const scraping = () => {
     const titlesClean = clean(removeUnwantedPhrases(titles, constants.UNWANTED_PHRASES));
     const finalTitles = deleteLines(titlesClean);
 
-    console.log(finalTitles);
+    const phrases = [];
+
+    finalTitles.map(title => {
+      phrases.push(analyzePhrase(title));
+    });
+
+    verifyPath(constants.PATH);
+    const json = JSON.stringify(phrases, null, 2);
+    const fileName = constants.NAME_FILE;
+    writeFile(constants.PATH, fileName, json);
+    
   });
 }
 

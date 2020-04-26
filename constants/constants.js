@@ -1,6 +1,9 @@
 module.exports = {
   METHOD: 'GET',
   URL: 'https://www.youtube.com/channel/UC7hG6Y7UiTrBGt3w1wwrnCQ/videos',
+  PATH: 'scores',
+  UTF8: 'utf8',
+  NAME_FILE: 'scores.json',
   UNWANTED_PHRASES: [
     'BR',
     'Fê Gourmet OficialPlaylistsComunidadeCanaisSobre',
