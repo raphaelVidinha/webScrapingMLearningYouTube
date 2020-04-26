@@ -13,10 +13,11 @@ const scraping = () => {
     if (error) return console.error(error);
     const $ = cheerio.load(body);
     const titles = $('a').text();
-    const newTitles = clean(removeUnwantedPhrases(titles, constants.UNWANTED_PHRASES));
-    const titlesClean = deleteLines(newTitles);
+    const titlesClean = clean(removeUnwantedPhrases(titles, constants.UNWANTED_PHRASES));
+    const finalTitles = deleteLines(titlesClean);
 
-    console.log(titlesClean);
+    console.log(finalTitles);
   });
 }
-scraping();
+
+module.exports = scraping;

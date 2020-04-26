@@ -21,5 +21,7 @@ module.exports = {
     'Instagram',
     'Fê Gourmet OficialInícioPlaylistsComunidadeCanaisSobre',
     'Enviar feedbackTestar os novos recursosFaça login',
+    'Política e Segurança',
+    'HistóricoSobreImprensaDireitos autoraisCriadores de conteúdoPublicidadeDesenvolvedoresTermosPrivacidade'
   ]
 }
