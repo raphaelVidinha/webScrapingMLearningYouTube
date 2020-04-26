@@ -1,4 +1,3 @@
-const fs = require('fs');
 const cheerio = require('cheerio');
 const request = require('request');
 const analyzePhrase = require('./training');
@@ -26,11 +25,12 @@ const scraping = () => {
       phrases.push(analyzePhrase(title));
     });
 
-    verifyPath(constants.PATH);
     const json = JSON.stringify(phrases, null, 2);
     const fileName = constants.NAME_FILE;
-    writeFile(constants.PATH, fileName, json);
+    const path = constants.PATH;
     
+    verifyPath(path);
+    writeFile(path, fileName, json);
   });
 }
 
