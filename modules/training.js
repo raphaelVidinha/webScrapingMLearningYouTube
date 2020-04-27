@@ -18,6 +18,8 @@ by.train("FOMOS PARA O CANADÁ E ACABOU O DINHEIRO. E AGORA?", 'Trabalho no Exte
 by.train("$50 DOLARES E UM TANQUE CHEIO!!! QUANTO VOCE PAGA PELA GASOLINA NO BRASIL???", 'Custo de Vida');
 by.train("QUNTO CUSTA VIAJAR PARA OS ESTADOS UNIDOS", 'Custo de Vida');
 by.train("COMPRAR OU ALUGAR IMóVEL NO CANADÁ, O QUE VALE MAIS A PENA? - FINANCIAMENTO DE IMÓVEIS NO CANADÁ", 'custo de vida');
+by.train("COMO VIVER EM PORTUGAL", 'Dicas');
+by.train("QUANTO CUSTA FAZER COMPRAS DE MÊS EM PORTUGAL", 'custo de vida');
 
 const analyzePhrase = (phrase) => {
   const score = by.guess(phrase);
